@@ -25,8 +25,8 @@ Ensure you have the following installed:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/RahimovIlhom/stat-edu-parsing.git
+cd stat-edu-parsing
 ```
 
 ### Step 2: Configure Environment Variables
@@ -34,6 +34,9 @@ Create a `.env` file in the root directory with the following content:
 ```bash
 # Server Parameters
 SECRET_KEY=<your-secret-key>
+
+# You can generate a Django SECRET_KEY using the following Python command:
+# python -c "import secrets; print(secrets.token_urlsafe(50))"
 DEBUG=True
 ALLOWED_HOSTS=127.0.0.1,localhost,0.0.0.0
 CSRF_TRUSTED_ORIGINS=<your-csrf-trusted-origins>
