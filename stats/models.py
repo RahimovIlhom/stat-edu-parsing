@@ -11,7 +11,10 @@ class Institution(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.otm_code} - {self.otm_name}"
+        return f"{self.otm_code} - {self.otm_name}"[0:50]
+
+    class Meta:
+        ordering = ['id']
 
 
 class StatisticsSnapshot(models.Model):
@@ -51,6 +54,7 @@ class StatisticsSnapshot(models.Model):
             models.Index(fields=['snapshot_date']),
             models.Index(fields=['institution', 'snapshot_date']),
         ]
+        ordering = ['id']
 
     def __str__(self):
         return f"{self.institution.otm_name} - {self.snapshot_date}"
