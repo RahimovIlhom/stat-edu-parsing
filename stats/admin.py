@@ -32,7 +32,7 @@ class StatisticsSnapshotAdmin(admin.ModelAdmin):
         'masters_joint',
         'masters_distance',
         'total_students',
-        'snapshot_date',
+        'created_at',
     )
     list_filter = ('snapshot_date', 'institution__ownership_type')
     search_fields = ('institution__otm_name', 'institution__otm_code')
